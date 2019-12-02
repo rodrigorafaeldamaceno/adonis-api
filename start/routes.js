@@ -24,3 +24,9 @@ Route.post('/register', 'AuthController.register')
 Route.post('/authenticate', 'AuthController.authenticate')
 
 Route.get('/app', 'AppController.index').middleware(['auth'])
+
+// grupo de rotas autenticadas
+Route.group(() => {
+  // cria todas as rotas
+  Route.resource('tweets', 'TweetController').apiOnly().except('update')
+}).middleware('auth')

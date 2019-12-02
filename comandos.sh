@@ -11,3 +11,6 @@ adonis make:controller --name
 # Crud
 adonis make:model Tweet -m -c 
 #-m cria a migration e -c o controller automaticamente
+
+# lista as rotas
+adonis route:list
